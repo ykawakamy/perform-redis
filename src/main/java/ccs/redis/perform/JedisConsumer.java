@@ -44,7 +44,7 @@ public class JedisConsumer {
                 }
 
                 PerformSnapshot snap = pc.reset();
-                log.info("{}: {} op, {} errors, {} ns/op, latency: {} ms/op", key, snap.getPerform(), snap.getErr(), snap.getElapsedPerOperation(et-st), snap.getLatencyPerOperation() );
+                snap.print(log, et-st);
             }
         } catch( Throwable th ) {
             th.printStackTrace();
